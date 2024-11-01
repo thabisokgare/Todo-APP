@@ -12,3 +12,36 @@ const descriptionInput = document.getElementById("description-input");
 
 let currentTask = {};
 const taskData = [];
+
+// adding an event listener
+
+openTaskFormBtn.addEventListener("click", () => {
+    taskForm.classList.toggle("hidden");
+});
+
+// adding an event listener for the close button
+
+closeTaskFormBtn.addEventListener("click", () => {
+    confirmCloseDialog.showModal();
+});
+
+// adding an event listener for the cancel or update button
+
+cancelBtn.addEventListener("click", () => {
+   
+    confirmCloseDialog.close();
+});
+
+discardBtn.addEventListener("click", () => {
+    taskForm.classList.toggle("hidden");
+    confirmCloseDialog.close();
+});
+
+// adding an event listener for the add or update button
+taskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const dataArrIndex = taskData.findIndex((item) =>  item.id === currentTask.id );
+   
+
+});
